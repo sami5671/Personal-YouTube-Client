@@ -12,20 +12,46 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="main.css" />
+    <!-- ---------------------------------------------------------------------- -->
   </head>
-  <body>
+  <body class="container mx-auto">
     <!-- header start -->
-    <section>
+    <section
+      class="text-center md:flex md:items-center lg:flex lg:items-center justify-between mt-6"
+    >
       <div>
-        <img src="Logo.png" alt="" />
+        <img
+          src="Logo.png"
+          alt=""
+          class="w-auto block m-auto items-center lg:m-auto lg:w-auto"
+        />
       </div>
       <div>
-        <button>Short By User</button>
+        <button
+          class="bg-gray-400 mt-4 font-bold text-black px-4 py-2 rounded-lg"
+        >
+          Short By User
+        </button>
       </div>
       <div>
-        <button>Blog</button>
+        <button
+          class="bg-red-500 mt-4 text-white font-bold px-6 py-2 rounded-lg"
+        >
+          Blog
+        </button>
       </div>
     </section>
+    <br />
+    <hr />
     <!-- header end  -->
     <!-- main -->
 
