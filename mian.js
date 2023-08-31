@@ -28,7 +28,7 @@ const loadCategory = async (id) => {
     const div = document.createElement("div");
     div.innerHTML = `
     <div class="card w-auto bg-base-100 shadow-xl">
-          <figure><img src="${category.thumbnail}" alt="" /></figure>
+          <figure><img src="${category.thumbnail}" alt="" class="w-auto" /></figure>
           <div class="card-body">
             <div class="flex items-center gap-5">
               <img src="${category.authors[0].profile_picture}" alt="" class="w-14 h-12 rounded-full" />
