@@ -8,7 +8,7 @@ const loadData = async () => {
   data.data.forEach((category) => {
     const div = document.createElement("div");
     div.innerHTML = `
-    <button onclick="loadCategory('${category.category_id}')" class="mb-2 btn hover:bg-red-500 btn-outline">
+    <button onclick="loadCategory('${category.category_id}')" class="mb-2 btn hover:bg-red-500 hover:text-white btn-outline">
   ${category.category}
 </button>
   `;
@@ -46,20 +46,20 @@ const loadCategory = async (id) => {
         <img
           src="${category.thumbnail}"
           alt="Thumbnail Image"
-          class="h-52 w-84 rounded-lg"
+          class="h-44 w-96 rounded-lg"
         />
       </div>
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2">
         <img
           src="${category.authors[0].profile_picture}"
           alt="Profile Picture"
           class="w-12 h-12 rounded-full border-2 border-black"
         />
-        <h2 class="text-xl font-semibold text-center">${category.title}</h2>
+        <h2 class="text-xl font-semibold">${category.title}</h2>
       </div>
-      <div>
-      <p class="text-center">${category.authors[0].profile_name}</p>
-      <p class="text-center">${category.others.views} Views</p>
+      <div class="text-sm">
+      <p class="">${category.authors[0].profile_name}</p>
+      <p class="">${category.others.views} Views</p>
       </div>
 
     </div>
@@ -67,8 +67,52 @@ const loadCategory = async (id) => {
     allCategory.appendChild(div);
   });
 };
-loadData();
+// =================================================================
+const loadCategory1 = async () => {
+  const response = await fetch(
+    `https://openapi.programming-hero.com/api/videos/category/1000`
+  );
+  const data = await response.json();
+  console.log(data);
+  const cards = data.data;
 
+  const allCategory = document.getElementById("all-category-container");
+  allCategory.innerText = "";
+
+  cards.forEach((category) => {
+    // console.log(data.data);
+    const div = document.createElement("div");
+    div.innerHTML = `
+  <div class="max-w-md w-full bg-white rounded-lg shadow-md p-6 space-y-4">
+      <div class="flex justify-center">
+        <img
+          src="${category.thumbnail}"
+          alt="Thumbnail Image"
+          class="h-44 w-96 rounded-lg"
+        />
+      </div>
+      <div class="flex items-center gap-2">
+        <img
+          src="${category.authors[0].profile_picture}"
+          alt="Profile Picture"
+          class="w-12 h-12 rounded-full border-2 border-black"
+        />
+        <h2 class="text-xl font-semibold">${category.title}</h2>
+      </div>
+      <div class="text-sm">
+      <p class="">${category.authors[0].profile_name}</p>
+      <p class="">${category.others.views} Views</p>
+      </div>
+
+    </div>
+  `;
+    allCategory.appendChild(div);
+  });
+};
+
+// =================================================================
+loadData();
+loadCategory1();
 // ==================Short by user====================
 const shortbyUser = async () => {
   const response = await fetch(

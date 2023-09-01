@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,18 +35,20 @@
         class="text-center md:flex md:items-center lg:flex lg:items-center justify-between mt-6"
       >
         <div>
-          <img
-            src="Logo.png"
-            alt=""
-            class="w-auto block m-auto items-center lg:m-auto lg:w-auto"
-          />
+          <a href="index.html">
+            <img
+              src="Logo.png"
+              alt=""
+              class="w-auto block m-auto items-center lg:m-auto lg:w-auto"
+            />
+          </a>
         </div>
         <div>
           <button
             onclick="shortbyUser()"
-            class="bg-gray-400 mt-4 font-bold text-black px-4 py-2 rounded-lg"
+            class="bg-gray-400 mt-4 font-bold text-black hover:bg-red-500 hover:text-white px-4 py-2 rounded-lg"
           >
-            Short By User
+            Sort by view
           </button>
         </div>
         <div>
@@ -65,13 +67,13 @@
     <!-- main start -->
     <div
       id="category-container"
-      class="text-center lg:flex lg:justify-center lg:ml-24 lg:gap-8 mt-5"
+      class="text-center md:flex md:justify-center md:gap-3 lg:flex lg:justify-center lg:ml-24 lg:gap-8 mt-5"
     ></div>
 
     <!-- for categories -->
     <section
       id="all-category-container"
-      class="grid grid-cols-1 lg:grid-cols-4 gap-2"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2"
     ></section>
 
     <!-- page not found -->
