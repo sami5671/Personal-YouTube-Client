@@ -30,31 +30,35 @@
   </head>
   <body class="container mx-auto">
     <!-- header start -->
-    <section
-      class="text-center md:flex md:items-center lg:flex lg:items-center justify-between mt-6"
-    >
-      <div>
-        <img
-          src="Logo.png"
-          alt=""
-          class="w-auto block m-auto items-center lg:m-auto lg:w-auto"
-        />
-      </div>
-      <div>
-        <button
-          class="bg-gray-400 mt-4 font-bold text-black px-4 py-2 rounded-lg"
-        >
-          Short By User
-        </button>
-      </div>
-      <div>
-        <button
-          class="bg-red-500 mt-4 text-white font-bold px-6 py-2 rounded-lg"
-        >
-          Blog
-        </button>
-      </div>
-    </section>
+    <header>
+      <section
+        class="text-center md:flex md:items-center lg:flex lg:items-center justify-between mt-6"
+      >
+        <div>
+          <img
+            src="Logo.png"
+            alt=""
+            class="w-auto block m-auto items-center lg:m-auto lg:w-auto"
+          />
+        </div>
+        <div>
+          <button
+            onclick="shortbyUser()"
+            class="bg-gray-400 mt-4 font-bold text-black px-4 py-2 rounded-lg"
+          >
+            Short By User
+          </button>
+        </div>
+        <div>
+          <button
+            onclick="blog()"
+            class="bg-red-500 mt-4 text-white font-bold px-6 py-2 rounded-lg"
+          >
+            Blog
+          </button>
+        </div>
+      </section>
+    </header>
     <br />
     <hr />
     <!-- header end  -->
@@ -65,9 +69,20 @@
     ></div>
 
     <!-- for categories -->
-    <section>
-      <div id="all-category-container" class="grid grid-cols-4 gap-4"></div>
-    </section>
+    <section
+      id="all-category-container"
+      class="grid grid-cols-1 lg:grid-cols-4 gap-2"
+    ></section>
+
+    <!-- page not found -->
+    <!-- <div id="page-not-found" class="mt-24 lg:px-96">
+      <button
+        onclick="pageNotFound()"
+        class="mb-2 btn hover:bg-red-500 btn-outline"
+      >
+        Drawing
+      </button>
+    </div> -->
     <!-- main end -->
     <!-- footer -->
     <script src="mian.js"></script>

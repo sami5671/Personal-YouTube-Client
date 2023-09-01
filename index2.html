@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <section class="container mx-auto">
+    <h1>JavaScript Concepts</h1>
+
+    <h2>Scope of var, let, and const:</h2>
+    <p>
+        <strong>var:</strong>
+        <ul>
+            <li>Function-scoped: Variables declared with var are function-scoped, meaning they are only accessible within the function they are declared in.</li>
+            <li>Hoisting: Variables declared with var are hoisted to the top of their containing function or global scope, which means you can access them before they are declared in the code. However, they will be initialized with undefined until their actual declaration in the code.</li>
+            <li>Re-declaration: You can re-declare a variable using var within the same scope without errors.</li>
+        </ul>
+        <!-- Include similar content for let and const -->
+    </p>
+
+    <h2>Use cases of null and undefined:</h2>
+    <p>
+        <strong>null:</strong>
+        <ul>
+            <li>It represents an intentional absence of any object value or a "nothing" value.</li>
+            <li>It can be used to explicitly clear the value of a variable or property.</li>
+            <li>It is often used in situations where you want to signify that a variable or object property has no value or is unknown.</li>
+        </ul>
+        <strong>undefined:</strong>
+        <ul>
+            <li>It represents a variable or object property that has been declared but has not been assigned any value.</li>
+            <li>It is the default value of function parameters if no argument is passed.</li>
+            <li>It typically indicates a bug or unintended behavior in your code when encountered unexpectedly.</li>
+        </ul>
+    </p>
+
+    <h2>REST API (Representational State Transfer Application Programming Interface):</h2>
+    <p>
+        <strong>REST is an architectural style for designing networked applications, and a REST API is a set of rules and conventions for building and interacting with web services. It is based on the following principles:</strong>
+        <ol>
+            <li>Stateless: Each request from a client to a server must contain all the information needed to understand and fulfill the request. The server should not store any client state between requests. This makes the system highly scalable and allows for easy load balancing.</li>
+            <li>Client-Server: The client and server are separate entities that communicate over a stateless protocol (typically HTTP). This separation of concerns allows for independent development and scalability of both client and server components.</li>
+            <li>Resource-Based: Resources (e.g., data objects) are identified by URIs (Uniform Resource Identifiers). Clients interact with resources through a limited set of well-defined methods (e.g., GET to retrieve, POST to create, PUT to update, DELETE to delete).</li>
+            <li>Representation: Resources can have multiple representations (e.g., JSON, XML, HTML). Clients can choose the representation that best suits their needs, and the representation can include hyperlinks to related resources.</li>
+            <li>Stateless Communication: Each request from the client to the server must include all the information needed to understand and process the request. The server does not store information about the client's state between requests.</li>
+        </ol>
+    </p>
+  </section>
+  </body>
+</html>
