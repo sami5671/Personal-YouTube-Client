@@ -58,7 +58,7 @@ const loadCategory = async (id) => {
           alt="Thumbnail Image"
           class="h-44 w-96 rounded-lg"
         />
-        <div class= "bg-black absolute ml-6 mt-36 px-2 shadow-xl"> 
+        <div class= "bg-black absolute ml-6 mt-36 px-2 rounded-lg shadow-xl"> 
         <h2 class= "text-white">${hours}hr ${remainingMin}min ago</h2>
         </div>
       </div>
@@ -108,7 +108,7 @@ const loadCategory1 = async () => {
           alt="Thumbnail Image"
           class="h-44 w-96 rounded-lg"
         />
-        <div class= "bg-black absolute ml-6 mt-36 px-2 shadow-xl"> 
+        <div class= "bg-black absolute ml-6 mt-36 px-2 rounded-lg shadow-xl"> 
         <h2 class= "text-white">${hours}hr ${remainingMin}min ago</h2>
         </div>
         </div>
@@ -168,7 +168,7 @@ const sortbyUser = async () => {
           alt="Thumbnail Image"
           class="h-44 w-96 rounded-lg"
         />
-        <div class= "bg-black absolute ml-6 mt-36 px-2 shadow-xl">
+        <div class= "bg-black absolute ml-6 mt-36 px-2 rounded-lg shadow-xl">
         <h2 class= "text-white">${hours}hr ${remainingMin}min ago</h2>
         </div>
         </div>
