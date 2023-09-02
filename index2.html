@@ -29,48 +29,168 @@
     <!-- ---------------------------------------------------------------------- -->
   </head>
   <body>
+    <section class="container mx-auto mt-6 ml-4">
+      <h1 class="text-3xl font-bold text-red-400">JavaScript Concepts</h1>
+      <hr />
+      <hr />
+      <hr />
+      <hr />
 
-    <section class="container mx-auto">
-    <h1 class="text-3xl font bold">JavaScript Concepts</h1>
+      <h2 class="text-xl mt-4 font-bold">Scope of var, let, and const:</h2>
+      <p class="mb-10">
+        In JavaScript, we can declare a variable using three
+        <strong>keywords: var, let and constant. </strong>In the below of the
+        blog I will discuss about the Scope of the keywords.
+      </p>
 
-    <h2>Scope of var, let, and const:</h2>
-    <p>
-        <strong>var:</strong>
-        <ul>
-            <li>Function-scoped: Variables declared with var are function-scoped, meaning they are only accessible within the function they are declared in.</li>
-            <li>Hoisting: Variables declared with var are hoisted to the top of their containing function or global scope, which means you can access them before they are declared in the code. However, they will be initialized with undefined until their actual declaration in the code.</li>
-            <li>Re-declaration: You can re-declare a variable using var within the same scope without errors.</li>
-        </ul>
-        <!-- Include similar content for let and const -->
-    </p>
+      <div>
+        <p class="text-2xl">
+          <strong class="text-amber-600 text-xl">Var:</strong>
+        </p>
+        <p class="mt-4">
+          <span class="font-bold">Scope: </span>
+          The scope of the var keyword is the global or function scope. It means
+          variables defined outside the function can be accessed globally, and
+          variables defined inside a particular function can be accessed within
+          the function.
+        </p>
+        <br />
+        <p>
+          <strong>For Instance: </strong>Variable 'a' is declared globally. So,
+          the scope of the variable 'a' is global, and it can be accessible
+          everywhere in the program.
+        </p>
+        <p class="mt-4">
+          var a = 10 <br />
+          function f() { <br />
+          console.log(a) <br />
+          } <br />
+          f(); <br />
+          console.log(a);<br />
+        </p>
 
-    <h2>Use cases of null and undefined:</h2>
-    <p>
-        <strong>null:</strong>
-        <ul>
-            <li>It represents an intentional absence of any object value or a "nothing" value.</li>
-            <li>It can be used to explicitly clear the value of a variable or property.</li>
-            <li>It is often used in situations where you want to signify that a variable or object property has no value or is unknown.</li>
-        </ul>
-        <strong>undefined:</strong>
-        <ul>
-            <li>It represents a variable or object property that has been declared but has not been assigned any value.</li>
-            <li>It is the default value of function parameters if no argument is passed.</li>
-            <li>It typically indicates a bug or unintended behavior in your code when encountered unexpectedly.</li>
-        </ul>
-    </p>
+        <p><strong>Output:</strong> 10 10</p>
+      </div>
+      <!--  -->
+      <div class="mt-10">
+        <p class="text-2xl">
+          <strong class="text-amber-600">let: </strong>
+        </p>
+        <p class="mt-4">
+          <span class="font-bold">Scope: </span>The let keyword is an improved
+          version of the var keyword. Scope: block scoped: The scope of a let
+          variable is only block scoped. It can't be accessible outside the
+          particular block ({block}).
+        </p>
+        <br />
+        <p>
+          <strong>For Instance: </strong> The code returns an error because we
+          are accessing the let variable outside the function block.
+        </p>
+        <p class="mt-4">
+          let a = 10; <br />
+          function f() { <br />
+          if (true) { <br />
+          let b = 9 <br />
+          console.log(b); <br />
+          } <br />
+          console.log(b); <br />
+          } <br />
+          f() <br />
+          console.log(a) <br />
+        </p>
 
-    <h2>REST API (Representational State Transfer Application Programming Interface):</h2>
-    <p>
-        <strong>REST is an architectural style for designing networked applications, and a REST API is a set of rules and conventions for building and interacting with web services. It is based on the following principles:</strong>
-        <ol>
-            <li>Stateless: Each request from a client to a server must contain all the information needed to understand and fulfill the request. The server should not store any client state between requests. This makes the system highly scalable and allows for easy load balancing.</li>
-            <li>Client-Server: The client and server are separate entities that communicate over a stateless protocol (typically HTTP). This separation of concerns allows for independent development and scalability of both client and server components.</li>
-            <li>Resource-Based: Resources (e.g., data objects) are identified by URIs (Uniform Resource Identifiers). Clients interact with resources through a limited set of well-defined methods (e.g., GET to retrieve, POST to create, PUT to update, DELETE to delete).</li>
-            <li>Representation: Resources can have multiple representations (e.g., JSON, XML, HTML). Clients can choose the representation that best suits their needs, and the representation can include hyperlinks to related resources.</li>
-            <li>Stateless Communication: Each request from the client to the server must include all the information needed to understand and process the request. The server does not store information about the client's state between requests.</li>
-        </ol>
-    </p>
-  </section>
+        <p>
+          <strong>Output:</strong> 9 <br />
+          ReferenceError: b is not defined
+        </p>
+      </div>
+      <div class="mt-10">
+        <p class="text-2xl">
+          <strong class="text-amber-600">Const: </strong>
+        </p>
+        <p class="mt-4">
+          <span class="font-bold">Scope: </span>The const keyword has all the
+          properties that are the same as the let keyword, except the user
+          cannot update it. When users declare a const variable, they need to
+          initialize it, otherwise, it returns an error. The user cannot update
+          the const variable once it is declared.
+        </p>
+        <br />
+        <p>
+          <strong>For Instance: </strong> The code returns an error because we
+          are accessing the let variable outside the function block.
+        </p>
+        <p class="mt-4">
+          const a = 10;<br />
+          function f() {<br />
+          a = 9<br />
+          console.log(a)<br />
+          }<br />
+          f();<br />
+        </p>
+        <p>
+          <strong>Output:</strong> TypeError:Assignment to constant variable.
+          <br />
+        </p>
+      </div>
+
+      <!-- 
+
+       -->
+      <div class="mt-5">
+        <h1 class="text-3xl font-bold text-amber-600">JavaScript undefined</h1>
+        <p class="mt-3">
+          If a variable is declared but the value is not assigned, then the
+          value of that variable will be undefined. For example,
+        </p>
+        <p class="mt-3">
+          <p class="font-bold">Example: 1</p>
+          let name;<br />
+          console.log(name); // undefined
+        </p>
+
+        <p class="mt-3">
+          <p class="font-bold">Example: 2</p>
+          let name = "Felix";<br>
+          // assigning undefined to the name variable<br>
+          name = undefined<br>
+          console.log(name); // returns undefined<br>
+        </p>
+      </div>
+
+      <div class="mt-3">
+   <h1 class="text-3xl font-bold text-amber-600"> JavaScript null</h1>    
+<p class="mt-3">In JavaScript, null is a special value that represents an empty or unknown value. For example,<br>
+  let number = null;
+</p>
+<p>
+  <p ><span class="font-bold">For Instance:</span> <br>
+    let result;<br>
+    result = Boolean(undefined);<br>
+    console.log(result); // false<br>
+    result = Boolean(null);<br>
+    console.log(result); // false<br>
+  </p>
+</p>
+      </div>
+
+      <!-- rest api -->
+      <div class="mt-4">
+        <h1 class="text-amber-600 font-bold text-3xl">Explanation of REST API</h1>
+        <p class="mt-4">Representational State Transfer (REST) is an architectural style that defines a set of constraints to be used for creating web services.
+           REST API is a way of accessing web services in a simple and flexible way without having any processing. REST technology is generally preferred to the more robust Simple Object Access Protocol (SOAP) technology because REST uses less bandwidth, simple and flexible making it more suitable for internet usage. It’s used to fetch or give some information from a web service.
+            All communication done via REST API uses only HTTP request. </p>
+
+            <h1 class="font-bold text-xl">Working Procedure: </h1>
+            <p>A request is sent from client to server in the form of a web URL as HTTP GET or POST or PUT or DELETE request.
+               After that, a response comes back from the server in the form of a resource which can be anything like HTML, XML, 
+               Image, or JSON. But now JSON is the most popular format being used in Web Services. </p>
+      </div>
+
+      <div class="mt-4 mb-12">
+        <img src="REST_API.jpeg" alt="" class="w-[350px] h-[80px]">
+      </div>
+    </section>
   </body>
 </html>
