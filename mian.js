@@ -1,3 +1,4 @@
+// ============================================ INITIAL FETCH FOR FETCHING THE BUTTONS =========================================
 const loadData = async () => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/videos/categories`
@@ -16,7 +17,7 @@ const loadData = async () => {
   });
 };
 
-// ======================================
+// ====================================== PAGE NOT FOUND SECTIONS =====================================================
 // function pageNotFound() {
 //   const pageNotFound = document.getElementById("page-not-found");
 //   const div = document.createElement("div");
@@ -25,7 +26,7 @@ const loadData = async () => {
 //   <h1 class="text-xl font-bold">Oops!! Sorry, There is no content here</h1>
 //   `;
 // }
-// ======================================
+// =================================== CATEGORY LOAD 2 AFTER CLICKING THE BUTTON =============================================
 const loadCategory = async (id) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${id}`
@@ -38,6 +39,10 @@ const loadCategory = async (id) => {
   allCategory.innerText = "";
 
   cards.forEach((category) => {
+    const apiDataSeconds = category.others.posted_date;
+    const minutes = Math.floor(apiDataSeconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const remainingMin = minutes % 60;
     // console.log(data.data);
     const div = document.createElement("div");
     div.innerHTML = `
@@ -48,6 +53,9 @@ const loadCategory = async (id) => {
           alt="Thumbnail Image"
           class="h-44 w-96 rounded-lg"
         />
+        <div class= "bg-black absolute ml-6 mt-36 px-2 shadow-xl"> 
+        <h2 class= "text-white">${hours}hr ${remainingMin}min ago</h2>
+        </div>
       </div>
       <div class="flex items-center gap-2">
         <img
@@ -67,19 +75,24 @@ const loadCategory = async (id) => {
     allCategory.appendChild(div);
   });
 };
-// =================================================================
+// ================================================ CATEGORY LOAD 1 ==================================================
 const loadCategory1 = async () => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/1000`
   );
   const data = await response.json();
-  console.log(data);
+  console.log(data.data[0].others.posted_date);
   const cards = data.data;
 
   const allCategory = document.getElementById("all-category-container");
   allCategory.innerText = "";
 
   cards.forEach((category) => {
+    const apiDataSeconds = category.others.posted_date;
+
+    const minutes = Math.floor(apiDataSeconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const remainingMin = minutes % 60;
     // console.log(data.data);
     const div = document.createElement("div");
     div.innerHTML = `
@@ -90,7 +103,11 @@ const loadCategory1 = async () => {
           alt="Thumbnail Image"
           class="h-44 w-96 rounded-lg"
         />
-      </div>
+        <div class= "bg-black absolute ml-6 mt-36 px-2 shadow-xl"> 
+        <h2 class= "text-white">${hours}hr ${remainingMin}min ago</h2>
+        </div>
+        </div>
+       
       <div class="flex items-center gap-2">
         <img
           src="${category.authors[0].profile_picture}"
@@ -110,10 +127,10 @@ const loadCategory1 = async () => {
   });
 };
 
-// =================================================================
+// ===============================FOR LOADING DATA ON THE WEBSITE INITIALLY===========================================
 loadData();
 loadCategory1();
-// ==================Short by user====================
+// =======================================SHORT BY THE VIEW USER =====================================================
 const shortbyUser = async () => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/1000`
@@ -125,11 +142,10 @@ const shortbyUser = async () => {
   });
 };
 
-// ======================================
+// ==================================================================================================================
 
-// ======================blog======================================
-
+// =============================================BLOG SECTION ========================================================
 function blog() {
   window.location.href = "index2.html";
 }
-// =================================================================
+// =================================================================================================================
